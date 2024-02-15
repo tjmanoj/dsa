@@ -21,3 +21,7 @@ int main() {
     cout << answer;
     
 }
+
+
+// Time Complexity : O(len(str))
+// Space Complexity: O(1)            because we use only 26 spaces for storing the freqencies
