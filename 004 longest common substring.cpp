@@ -11,6 +11,7 @@ string longestCommonPrefix(string s[], int n){
     for(int i=0;i< first.size();i++)
         if(first[i] == last[i])
             answer += first[i];
+        else break;
     
     return answer;
 }
