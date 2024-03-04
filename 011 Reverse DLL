@@ -56,3 +56,21 @@ int main() {
   print(temp);
   return 0;
 }
+
+
+// Solution using stack
+Node* solution(Node* head){
+    stack<int> s;
+    Node* temp = head;
+    while(temp != nullptr){
+        s.push(temp->data);
+        temp = temp->next;
+    }
+    temp = head;
+    while(temp != nullptr){
+        temp->data = s.top();
+        s.pop();
+        temp= temp->next;
+    }
+    return head;
+}
