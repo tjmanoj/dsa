@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+class Node {
+    public:
+        int data;
+        Node* next;
+    public:
+        Node(int value, Node* address){
+            data = value;
+            next = address;
+        }
+    public:
+        Node(int value){
+            data = value;
+            next = NULL;
+        }
+    public:
+        Node(){
+            data = 0;
+            next = NULL;
+        }
+};
+Node* array_to_LL(int arr[], int n){
+    Node* head = new Node(arr[0]);
+    Node* cur = head;
+    for(int i=1; i<=n-1; i++)
+    {
+        Node* temp = new Node(arr[i]);
+        cur->next = temp;
+        cur = cur->next;
+    }
+    return head;
+}
+void printLL(Node* head) {
+    while (head != NULL) {
+        cout << head->data << " ";
+        head = head->next;
+    }
+}
+
+Node *add_two_numbers(Node *head1, Node *head2)
+{
+    Node* temp1 = head1;
+    Node* temp2 = head2;
+    Node* temp = nullptr;
+    int carry = 0;
+    while(temp1 || temp2){
+        int sum = carry;
+        if(temp1 != nullptr) sum += temp1->data;
+        if(temp2 != nullptr) sum += temp2->data;
+        carry = sum / 10;
+        temp1->data = sum % 10;
+        if(temp1){
+          temp = temp1;
+          temp1 = temp->next;
+        }
+        if(temp2) temp2 = temp2->next;
+    }
+    if(carry == 1){
+        temp->next = new Node(1);
+    }
+    return head1;
+}
+
+int main() {
+    int m = 3,n = 2;
+    int a_arr[m] = {6,8,9};
+    int b_arr[n] = {8,3};
+    Node* a = array_to_LL(a_arr,m);
+    Node* b = array_to_LL(b_arr,n);
+    Node* c = add_two_numbers(a,b);
+    printLL(c);
+    return 0;
+}
