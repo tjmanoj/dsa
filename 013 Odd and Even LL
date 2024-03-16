@@ -1,0 +1,43 @@
+/*
+class Node {
+    public:
+        int data;
+        Node* next;
+    public:
+        Node(int value, Node* address){
+            data = value;
+            next = address;
+        }
+    public:
+        Node(int value){
+            data = value;
+            next = NULL;
+        }
+};
+*/
+
+//Brute Force
+Node* solution(Node* head){
+    if(head->next == nullptr) return head;
+    Node* temp = head;
+    Node* even = new Node(temp->data);
+    Node* odd = new Node(temp->next->data);
+    Node* tempEven = even;
+    Node* tempOdd = odd;
+    temp = temp->next->next;
+    int count = 2;
+    while(temp != nullptr){
+        if(count % 2 == 1){
+            tempOdd->next = new Node(temp->data);
+            tempOdd = tempOdd->next;
+        }
+        else{
+            tempEven->next = new Node(temp->data);
+            tempEven = tempEven->next;
+        }
+        count ++;
+        temp = temp->next;
+    }
+    tempEven->next = odd;
+    return even;
+}
