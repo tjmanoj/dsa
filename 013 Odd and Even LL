@@ -16,7 +16,29 @@ class Node {
 };
 */
 
+//Optimal
+TC: O(n/2)
+SC: O(1)
+
+Node* solution(Node* head){
+    Node* even = head;
+    Node* odd = head->next;
+    Node* oddHead = head->next;
+    while(odd != nullptr && odd->next != nullptr){
+        even->next = even->next->next;
+        odd->next = odd->next->next;
+        even = even->next;
+        odd = odd->next;
+    }
+    even->next = oddHead;
+    return head;
+}
+
+
+
 //Brute Force
+TC : O(2N)
+SC : O(n)
 Node* solution(Node* head){
     if(head->next == nullptr) return head;
     Node* temp = head;
