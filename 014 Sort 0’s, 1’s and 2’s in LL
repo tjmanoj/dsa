@@ -106,7 +106,7 @@ Node* solution(Node* head){
         else p1->next = nullptr;
     }
     if(p2) p2->next = nullptr;
-    if(p0 != nullptr) return first_node_of_0;
-    else if(p1 != nullptr) return first_node_of_1;
+    if(p0) return first_node_of_0;
+    if(p1) return first_node_of_1;
     return first_node_of_2;
 }
