@@ -1,0 +1,52 @@
+/*
+class Node {
+    public:
+        int data;
+        Node* next;
+    public:
+        Node(int value, Node* address){
+            data = value;
+            next = address;
+        }
+    public:
+        Node(int value){
+            data = value;
+            next = NULL;
+        }
+};
+*/
+
+BRUTE FORCE:
+TC  : O(2N)
+SC  : O(1)
+Node* solution(Node* head){
+    int count0 = 0;
+    int count1 = 0;
+    int count2 = 0;
+    Node* temp = head;
+    while(temp != nullptr){
+        if(temp->data == 0)
+            count0++;
+        else if(temp->data == 1)
+            count1 ++;
+        else count2 ++;
+        temp = temp->next;
+    }
+    temp = head;
+    while(temp != nullptr){
+        if(count0 != 0){
+            temp->data = 0;
+            count0 --;
+        }
+        else if(count1 != 0){
+            temp->data = 1;
+            count1 --;
+        }
+        else{
+            temp->data = 2;
+            count2 --;
+        }
+        temp = temp->next;
+    }
+    return head;
+}
