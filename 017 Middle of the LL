@@ -36,3 +36,19 @@ Node* solution(Node* head){
     }
     return temp;
 }
+
+
+
+// Hare and Tortoise Optimal Approach ( use slow and fast pointers)
+TC    : O(n / 2) 
+SC    : O(1)
+
+Node* solution(Node* head){
+    Node* slow = head;
+    Node* fast = head;
+    while(fast != nullptr && fast->next != nullptr){
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
