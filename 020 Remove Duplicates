@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+// Bruteforce
+TC  : O(nlogn + n)
+SC  : O(n)
+
+int remove_duplicates(int a[], int n)
+{
+    set<int> s;
+    for(int i=0;i<=n-1;i++)
+    {
+        s.insert(a[i]);
+    }
+    int j=0;
+    for(auto k: s)
+    {
+        a[j]=k;
+        j++;
+    }
+    return s.size();
+}
+
+
+// Optimal
+TC  : O(n)
+SC  : O(1)
+void remove_duplicates(int a[],int n){
+    int i=0;
+    for(int j=0;j<n;j++){
+        if(a[j] != a[i]){
+            a[i+1] = a[j];
+            i++;
+        }
+    }
+    cout << i+1 << endl;
+}
+int main() {
+  int n;
+  cin >> n;
+  int a[n];
+  for(int i=0;i<n;i++) cin >> a[i];
+  remove_duplicates(a,n);
+  for(int i=0;i<n;i++) cout << a[i] << " ";
+  return 0;
+}
