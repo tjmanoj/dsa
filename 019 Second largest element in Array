@@ -1,0 +1,31 @@
+//Bruteforce (use sort function and return)
+sort(arr, arr+n)
+TC  : O(N log N)
+SC  : O(1)
+
+
+//Optimal
+TC  : O(n)
+SC  : O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int find_second_max(vector<int> v){
+    int max1 = v[0];
+    int max2 = v[1];
+    for(int i=0;i<v.size();i++){
+        if(v[i] > max1 ){
+            max2 = max1;
+            max1 = v[i];
+        }
+        if(v[i] > max2 && v[i] != max1) max2 = v[i];
+    }
+    return max2;
+}
+int main() {
+  vector<int> v = {1,37,4,5,32,42};
+  cout << find_second_max(v);
+  
+  return 0;
+}
