@@ -52,7 +52,7 @@ Node *add_two_numbers(Node *head1, Node *head2)
         temp1->data = sum % 10;
         if(temp1){
           temp = temp1;
-          temp1 = temp->next;
+          temp1 = temp1->next;
         }
         if(temp2) temp2 = temp2->next;
     }
