@@ -78,7 +78,10 @@ Node* solution(Node* head, int k){
     Node* front = head;
     Node* back = head;
     for(int i=0;i<k-1;i++) back = back->next;
-    while(back != nullptr){
+    
+if(back == nullptt) return head->next;
+
+while(back != nullptr){
         front = front->next;
         back = back->next;
     }
