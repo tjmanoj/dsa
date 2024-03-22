@@ -67,6 +67,7 @@ Node* addOne(Node* head){
         carry = sum / 10;
         carryadd = temp;
         temp = temp->next;
+        if(carry == 0) break;
     }
     Node* result = reverse(rev);
     if(carry){
@@ -74,7 +75,6 @@ Node* addOne(Node* head){
         n->next = result;
         return n;
     }
-    // if(carry) carryadd->next = new Node(carry);
     return result;
 }
 
