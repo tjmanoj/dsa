@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int max_consecutive_ones(int a[], int n){
+    int cur = 0;
+    int max = 0;
+    for(int i=0;i<n;i++){
+        if(a[i] == 1){
+            cur++;
+            if(cur > max) max = cur;
+        }
+        else cur = 0;
+    }
+    return max;
+}
+int main() {
+  int a[8] = {1,1,3,1,5,1,1,1};
+  cout << max_consecutive_ones(a,8);
+  return 0;
+}
+
+//TC  : O(n)
+  SC  : O(1)
