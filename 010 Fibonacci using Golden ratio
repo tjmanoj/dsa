@@ -1,8 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
  
- int fibo(int n){
-     return (int)(pow(((1+ sqrt(5))/2),n)/ sqrt(5));
+//Note: Use double to store the golden ratio to work correctly and use the round function to get the precise answer
+
+int fibo(int n){
+     double phi = (1 + sqrt(5)) / 2;
+     return round(pow(phi, n)/ sqrt(5));
  }
  
 int main() {
