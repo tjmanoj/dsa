@@ -7,11 +7,14 @@ using namespace std;
 TC  : O(N + K) where k is the rotate times
 SC  : O(k)
 
-void left_rotate_by_k_places(int a[], int n, int k){
-    vector<int> v;
-    for(int i=0;i<k;i++) v.push_back(a[i]);
-    for(int i=k;i<n;i++) a[i-k] = a[i];
-    for(int i=0;i< n-k;i++) a[n-k+i] = v[i];
+void rotate(int arr[], int n, int k){
+    int temp[k];
+    for(int i = 0; i < k; i++) temp[i] = arr[i];
+  
+    for(int i = k; i< n; i++) arr[i-k] = arr[i];
+   
+    for(int i = n-k; i < n; i++) arr[i] = temp[i-(n-k)];
+    
 }
 
 
