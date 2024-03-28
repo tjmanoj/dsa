@@ -6,7 +6,6 @@ int solution(Node* head){
     Node* temp = head;
     map<Node*,int> m;
     int count = 0;
-    int count1 = 0;
     Node* target = nullptr;
     while(temp != nullptr){
         if(m.find(temp) == m.end()){
