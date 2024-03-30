@@ -1,0 +1,35 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+
+
+// Brute Force
+TC  : O(log n1 * (n*k))    // n1 is for inserting into set, n is number of elements in each k lists
+SC  : O(k * n)
+
+class Solution {
+public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        multiset<int> ans;
+        ListNode* a = new ListNode(-1);
+        ListNode* temp = a;
+        for(auto i: lists){
+            while(i != nullptr){
+                ans.insert(i->val);
+                i = i->next;
+            }
+        }
+        for(auto i: ans){
+            temp->next = new ListNode(i);
+            temp = temp->next;
+        }
+        return a->next;
+    }
+};
