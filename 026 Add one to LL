@@ -58,14 +58,12 @@ SC  : O(1)
 
 Node* addOne(Node* head){
     Node* rev = reverse(head);
-    Node* carryadd;
     int carry = 1;
     Node* temp = rev;
     while(temp != nullptr){
         int sum = carry + temp->data;
         temp->data = sum % 10;
         carry = sum / 10;
-        carryadd = temp;
         temp = temp->next;
         if(carry == 0) break;
     }
