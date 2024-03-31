@@ -11,8 +11,8 @@
 
 
 // Brute Force
-TC  : O(log n1 * (n*k))    // n1 is for inserting into set, n is number of elements in each k lists
-SC  : O(k * n)
+TC  : O(n*k * log m + m)    // m is n*k and the log m is for inserting
+SC  : O(n) + o(n)
 
 class Solution {
 public:
