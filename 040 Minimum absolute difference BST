@@ -1,0 +1,40 @@
+/*The Node structure is defined as
+struct Node {
+    int data;
+    Node *left;
+    Node *right;
+
+};
+*/
+#include<bits/stdc++.h>
+class Solution
+{
+    public:
+    int diff = INT_MAX;
+    int prev = -1;
+    int c = 0;
+    
+    void inorder(Node* root){
+        if(root == nullptr) return;
+        inorder(root->left);
+        if(c == 0){
+        prev = root->data;
+        c++;
+        }
+        else{
+            
+            if(abs(root->data - prev) < diff){
+              diff = abs(root->data - prev);
+            } 
+            prev =root->data;
+        }
+        
+        inorder(root->right);
+    }
+    int absolute_diff(Node *root)
+    {
+        inorder(root);
+        return diff;
+    }
+};
+
