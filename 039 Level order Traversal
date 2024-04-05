@@ -19,6 +19,7 @@ class solution{
     public:
     vector<int> levelorder(Node* root) {
       vector<int> ans;
+      if(root == nullptr) return ans;
       queue<Node*> q;
       q.push(root);
       while(!q.empty()){
