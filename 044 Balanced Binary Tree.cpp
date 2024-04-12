@@ -16,8 +16,9 @@ class solution {
             int right = height(root->right);
             int h = abs(left - right);
             if(h > 1) return 0;
-            balanced(root->left);
-            balanced(root->right);
+            bool l = balanced(root->left);
+            bool r = balanced(root->right);
+            return l && r;
     }
 };
 
