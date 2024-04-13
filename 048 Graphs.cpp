@@ -78,3 +78,40 @@ int main() {
 // 3 - 1 2 5 
 // 4 - 2 5 
 // 5 - 2 3 4 
+
+
+
+
+// With weights
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  int n,e;
+  cin >> n >> e;
+  vector<vector<pair<int,int>>> adj(n+1);
+  
+  for(int i=0;i<e;i++){
+      int f,t,w;          // from , to 
+      cin >> f >> t >> w;
+      adj[f].push_back({t,w});
+      adj[t].push_back({f,w});  // if directed remove this line 
+  }
+  
+  for(int i=1;i<=n;i++){
+      cout << i << " - " ;
+      for(auto k: adj[i]) cout << "{" <<k.first << "," << k.second << "}";
+      cout << endl;
+  }
+  
+  return 0;
+}
+
+//OP
+// 1 - { {2,30}{3,20} }
+// 2 - { {1,30}{3,10}{4,5}{5,6} }
+// 3 - { {1,20}{2,10}{5,12} }
+// 4 - { {2,5}{5,30} }
+// 5 - { {2,6}{3,12}{4,30} }
+
+
