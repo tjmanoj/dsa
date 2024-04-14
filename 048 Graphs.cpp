@@ -29,7 +29,7 @@ int main() {
   }
   
   for(int i=1;i<=n;i++){
-      for(auto k: adj[i]) cout << k << ' ';
+      for(int j=1;j<=n;j++) cout << adj[i][j] << ' ';
       cout << endl;
   }
   
