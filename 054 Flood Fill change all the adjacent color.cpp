@@ -21,9 +21,10 @@ class solution{
         if(j+1 < col && image[i][j+1] == old) dfs(i,j+1,image,old,newColor,row,col); 
     }
     vector<vector<int>> floodFill(vector<vector<int>>& image, int r, int c,int newColor){
+        int old_color = image[r][c];
+        if(old_color == newColor) return image;
         int row = image.size();
         int col = image[0].size();
-        int old_color = image[r][c];
         dfs(r,c,image,old_color,newColor,row,col);
         return image;
     }
