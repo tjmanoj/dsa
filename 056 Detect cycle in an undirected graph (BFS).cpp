@@ -30,7 +30,8 @@ public :
         for(int i=0;i<n;i++){                                   //O(n)
             if(!visited[i]){
                 if(bfs(i,adj,visited)) return true;             //O(n + 2e) for each bjs
-            }
+            }                                            
+                                                                //bjs function will return true if cycle exits, if bjs true then return true
         }
         return false;
         
