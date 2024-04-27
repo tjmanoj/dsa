@@ -16,8 +16,8 @@ public:
             for(auto k: adj[cur]){
                 if(visited[k] == -1){
                     q.push(k);
-                    visited[k] = visited[cur] == 1? 0: 1;
-                }
+                    visited[k] = visited[cur] == 1? 0: 1;        //or we can use     visited[k] = 1 - visited[cur]
+                 }
                 else{   // already visited means check if same color of cur and adj if so return true
                     if(visited[k] == visited[cur]) return false;
                 }
