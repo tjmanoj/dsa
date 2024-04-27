@@ -1,5 +1,5 @@
 //TC  : O(MN)
-//SC  : O(mn) + O(mn)    auxilary space + stack space
+//SC  : O(N)
 
 #include <bits/stdc++.h>
 using namespace std;
