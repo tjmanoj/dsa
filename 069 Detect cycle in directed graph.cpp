@@ -10,9 +10,11 @@ public:
         visited[cur] = 1;
         path[cur] = 1;
         for(auto k: adj[cur]){
-            if(visited[k] && path[k]) return true;
-            else{
+            if(!visited[k]){
                 if(dfs(k,visited,path,adj)) return true;
+            }
+            else{
+                if(path[k]) return true;
             }
         }
         path[cur] = 0;
@@ -29,3 +31,4 @@ public:
         return false;
     }
 };
+
