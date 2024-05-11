@@ -7,7 +7,7 @@ class Solution {
         vector<long long> ans{n};
         while(ans.back() != 1){
             if(ans.back() & 1) ans.push_back((long long)(pow(ans.back(),1.5)));
-            else ans.push_back((long long)pow(ans.back(),0.5));
+            else ans.push_back((long long)sqrt(ans.back());
         }
         return ans;
     }
