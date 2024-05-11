@@ -8,7 +8,7 @@ public:
         int ans = 0;
         while(right < s.size()){
             if(hash[s[right]] != -1 ){              // the char is already in hash
-                if(hash[s[right]] >= left)           // if starting index is less than hash index value
+                if(left <= hash[s[right]])           // if starting index is less than hash index value
                     left = hash[s[right]] + 1;      // change starting index
             }
             hash[s[right]] = right;
