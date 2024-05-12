@@ -28,3 +28,15 @@ int main(){
     if(flag) cout << "Yes";
     else cout <<"No";
 }
+
+
+
+// Check whether all english alphabets are present in the given sentence or not
+
+// I/P: abc defGhi JklmnOP QRStuv wxyz
+
+// O/P: True
+
+// I/P: abc defGhi JklmnOP QRStuv
+
+// O/P: False
