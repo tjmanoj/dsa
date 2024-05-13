@@ -48,3 +48,26 @@ int main(){
     }
 }
 
+
+
+// Find the strength of the given password string based on the conditions
+
+// Four rules were given based on the type and no. of characters in the string.
+
+// Weak – only Rule 1 is satisfied or Rule 1 is not satisfied
+
+// Medium – Two rules are satisfied
+
+// Good – Three rules satisfied
+
+// Strong – All Four rules satisfied
+
+
+
+// I/P: Qw!1        O/P: Weak
+
+// I/P: Qwertyuiop      O/P: Medium
+
+// I/P: QwertY123       O/P: Good
+
+// I/P: Qwerty@123    O/P: Strong
