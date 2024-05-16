@@ -3,7 +3,7 @@ public:
     int ans = 0;
     int dfs(int i,vector<vector<int>> &adj, vector<int> &visited){
         visited[i] = 1;
-        int count = 0;
+        int count = 0;			// to count the size of the subtree
         for(auto k:adj[i]){
             if(!visited[k]){
                 int result = dfs(k,adj,visited);
@@ -11,7 +11,9 @@ public:
                 else count += result;
             }
         }
-        return count+1;
+        return count+1;		// if last node before leaf node calls the leaf node then it will return 0 + 1, 
+	    			// because there is one node below the calling node, so the size of that node
+	    			// s subtree is 1.
     }
 	int minimumEdgeRemove(int n, vector<vector<int>>edges){
 	    vector<int> visited(n+1,0);
