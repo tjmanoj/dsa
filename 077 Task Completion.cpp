@@ -1,5 +1,5 @@
 // TC  : O(n + E)
-// SC  : O(N + P)
+// SC  : O(N + P)        // n for topo sort ans vector and P for adj list
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -34,8 +34,8 @@ class solution{
 
     bool taskCompletion(int n, int P, vector<pair<int,int>> &prerequisites){
       vector<vector<int>> adj(n);
-      for(auto i: prerequisites){
-          adj[i.second].push_back(i.first);
+      for(auto i: prerequisites){            // O(P) for creating the adj
+          adj[i.second].push_back(i.first);  // O(N + P) for kahn's algo        here P = E edges
       }
       return cycle(adj,n);
     }
