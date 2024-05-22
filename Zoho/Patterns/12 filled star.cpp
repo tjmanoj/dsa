@@ -16,6 +16,8 @@ int main()
     return 0;
 }
 
+//ip 11     ONLY FOR ODD NUMBERS
+
 //      X     
 //     XXX    
 //    XXXXX   
