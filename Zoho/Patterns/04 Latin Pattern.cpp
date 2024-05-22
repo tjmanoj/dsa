@@ -47,3 +47,10 @@ int main(){
 
     }
 }
+
+
+// 22.Given N. print the Latin Matrix (say N = 3). condition:  must not use strings(aka character literals), arrays (both 1D and 2D), inbuilt functions(like rotate).
+
+// A   B   C
+// B   C   A
+// C   A   B
