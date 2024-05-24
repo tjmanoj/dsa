@@ -29,3 +29,13 @@ int main() {
     else 
         cout << "No";
 }
+
+//Easy method
+int wordSum(string word){
+    int sum = 0;
+    for(int i=0;i<word.size();i++){
+        int k = word[i];
+        sum += k;
+    }
+    return sum;
+}
