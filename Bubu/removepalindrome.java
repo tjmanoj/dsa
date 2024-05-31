@@ -9,23 +9,25 @@ Hari speaks malayalam
 Output:
 Hari speaks
 */
-import java.util.Scanner;
+
+      import java.util.Scanner;
 
 public class RemovePalindromes {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a sentence:");
         String sentence = sc.nextLine();
-        
-        String[] words = sentence.split("\\s+");
         StringBuilder result = new StringBuilder();
-
-        for (String word : words) {
+        
+        // Using Scanner to tokenize the input
+        Scanner scanner = new Scanner(sentence);
+        while (scanner.hasNext()) {
+            String word = scanner.next();
             if (!isPalindrome(word)) {
                 result.append(word).append(" ");
             }
         }
-
+        
         System.out.println(result.toString().trim());
     }
 
