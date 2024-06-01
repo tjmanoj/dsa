@@ -4,6 +4,7 @@ Output: abbbbbbbbbb
  Input: b3c6d15
 Output: bbbccccccddddddddddddddd
 The number varies from 1 to 99.*/
+import java.util.Scanner;
 public class Extract 
 {
     public static void main(String[] args) 
