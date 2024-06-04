@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 template <typename KEY, typename VAL>
 class map{
     private:
@@ -32,7 +34,7 @@ class map{
         Node* erase(Node* node, const KEY &k){
             if(!node) return nullptr;
             if(k < node->key) node->left = erase(node->left,k);
-            if(k > node->key) node->right = erase(node->right,k)
+            if(k > node->key) node->right = erase(node->right,k);
             else{
                 if(!root->left){
                     Node* temp = node->right;
@@ -52,6 +54,11 @@ class map{
             }
             return node;
         }
+
+        int size(Node* node) const{
+			if(node == nullptr) return 0;
+			return 1 + size(node->left) + size(node->right);
+}
 
     
     public:
@@ -77,4 +84,20 @@ class map{
             if(node == nullptr) return nullptr;
             return &(node->val);
         }
+
+		int size() const{
+			return size(root);
+		}
 };
+
+int main(){
+	map<int,int>m;
+	m.insert(1,2);
+    m[4] = 3;
+	cout << m[4];
+	int * found = m.find(8);
+	if(found == nullptr) cout << "NO" << endl;
+	cout << m.size();
+	return 0;
+}
+
