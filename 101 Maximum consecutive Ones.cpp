@@ -10,7 +10,7 @@ public:
         while(r < nums.size()){
             if(nums[r] == 0) count++;
 
-            if(count > k){
+            if(count > k){                                    // asked longest so not used while here
                 if(nums[l] == 0) count--;
                 l++;
             }
