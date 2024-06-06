@@ -12,9 +12,9 @@ class Solution{
         while(r < N){
             sum += A[r];
 
-            if(sum == K) max = r+1;
+            if(sum == K) max = r+1;    
 
-            if(hash.find(sum-K) != hash.end()){
+            if(hash.find(sum-K) != hash.end()){            
                 int len = r - hash[sum-K];
                 if(len > max) max = len;
             }
