@@ -11,15 +11,14 @@ int main() {
 
     for(int i=0;i<n;i++) cin >> a[i];
 
-    //longest subarray length with sum <= k
-    int l = 0,r = n-1;
+    int l = k-1,r = n-1;
     int left_sum = 0,right_sum = 0;
 
     for(int i=0;i<k;i++) left_sum += a[i];    // O(K)
     int sum = left_sum;
 
-    while(k > 0){                      // O(K)
-        left_sum -= a[--k];
+    while(l >= 0){                      // O(K)
+        left_sum -= a[l--];
         right_sum += a[r--];
 
         if(left_sum + right_sum > sum) sum = left_sum + right_sum;
