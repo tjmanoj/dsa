@@ -16,7 +16,7 @@ class map{
             if(node == nullptr) return new Node(k,v);
             if(k < node->key)       node->left = insert(node->left,k,v);
             else if(k > node->key)  node-> right = insert(node->right,k,v);
-            else root->val = v;
+            else node->val = v;
             return node; 
         }
 
