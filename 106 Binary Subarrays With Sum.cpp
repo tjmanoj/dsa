@@ -27,7 +27,7 @@ public:
 
 class Solution {
 public:
-    int func(vector<int>& nums, int goal){    // sum <= k method counting
+    int helper(vector<int>& nums, int goal){    // sum <= k method counting
         int l=0, r=0,sum = 0,count = 0;
         if(goal < 0) return 0;
         while(r < nums.size()){
@@ -41,6 +41,6 @@ public:
         return count;
     }
     int numSubarraysWithSum(vector<int>& nums, int goal) {
-        return func(nums,goal) - func(nums,goal-1);
+        return helper(nums,goal) - helper(nums,goal-1);
     }
 };
