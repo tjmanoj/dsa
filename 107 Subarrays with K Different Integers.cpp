@@ -3,7 +3,7 @@
 
 class Solution {
 public:
-    int func(vector<int>& nums, int k){
+    int helper(vector<int>& nums, int k){
         map<int,int> m;
 
         int l=0,r=0,count=0;
@@ -23,6 +23,6 @@ public:
 
     }
     int subarraysWithKDistinct(vector<int>& nums, int k) {
-        return func(nums,k) - func(nums,k-1);    
+        return helper(nums,k) - helper(nums,k-1);    
     }
 };
