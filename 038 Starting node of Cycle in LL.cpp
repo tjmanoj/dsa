@@ -6,10 +6,9 @@ class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
         map<ListNode*,int> m;
-        int count = 0;
         ListNode* temp = head;
         while(temp != nullptr){
-            if(m.find(temp) == m.end()) m.insert({temp,count++});
+            if(m.find(temp) == m.end()) m.insert({temp,0});
             else return temp;
             temp = temp->next;
         }
