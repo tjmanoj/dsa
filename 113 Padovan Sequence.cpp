@@ -7,7 +7,7 @@ class Solution
     long long mod = 1000000007;             // 10^9 + 7
 
     int padavon(int n){
-        int dp[n+2];
+        int dp[n+1];
         dp[0] = 1;
         dp[1] = 1;
         dp[2] = 1;
