@@ -21,3 +21,17 @@ int main()
 }
 
 
+// Check Prime
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n = 25;
+    for(int i=2;i<=sqrt(n);i++){
+        if(n%i == 0){
+             cout << "Not prime";
+             exit(0);
+        }
+    }
+    cout << "Prime";
+}
