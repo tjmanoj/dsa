@@ -1,4 +1,4 @@
-// TC  : O(mn)
+// TC  : O(mn)                 only one time the dfs function is called
 // SC  : O(nm)
 
 #include <bits/stdc++.h>
