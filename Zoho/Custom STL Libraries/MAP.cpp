@@ -56,9 +56,9 @@ class map{
         }
 
         int size(Node* node) const{
-			if(node == nullptr) return 0;
-			return 1 + size(node->left) + size(node->right);
-}
+		if(node == nullptr) return 0;
+		return 1 + size(node->left) + size(node->right);
+	}
 
     
     public:
