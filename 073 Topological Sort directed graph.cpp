@@ -14,17 +14,18 @@ class solution{
             }
             s.push(i);
         }
+
         vector<int> topologicalSort(vector<vector<int>> adj) {
-        stack<int> s;
-        vector<int>v;
-        vector<int> visited(adj.size(),0);
-        for(int i=0;i<adj.size();i++){
-            if(!visited[i]) dfs(i,adj,visited,s);    // O(N + E)  directed so E not 2E
-        }
-        while(!s.empty()){
-            v.push_back(s.top());        // O(N)
-            s.pop();
-        }
-        return v;
+            stack<int> s;
+            vector<int>v;
+            vector<int> visited(adj.size(),0);
+            for(int i=0;i<adj.size();i++){
+                if(!visited[i]) dfs(i,adj,visited,s);    // O(N + E)  directed so E not 2E
+            }
+            while(!s.empty()){
+                v.push_back(s.top());        // O(N)
+                s.pop();
+            }
+            return v;
     }
 };

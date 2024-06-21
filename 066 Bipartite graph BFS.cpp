@@ -18,7 +18,7 @@ public:
                     q.push(k);
                     visited[k] = visited[cur] == 1? 0: 1;        //or we can use     visited[k] = 1 - visited[cur]
                  }
-                else{   // already visited means check if same color of cur and adj if so return true
+                else{   // already visited means check if same color of cur and adj if so return false
                     if(visited[k] == visited[cur]) return false;
                 }
             }
@@ -29,8 +29,8 @@ public:
         
         vector<int> visited(adj.size(),-1);
         for(int i=0;i<adj.size();i++){                                  //O(n)
-            if(visited[i] == -1) if(bfs(i,adj,visited)) return true;    //O(n + 2E)
+            if(visited[i] == -1) if(!bfs(i,adj,visited)) return false;    //O(n + 2E)       ethachi oru component non bipartite nalum return false
         }
-        return false;
+        return true;
     }
 };

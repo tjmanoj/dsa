@@ -2,12 +2,10 @@
 using namespace std;
 int main()
 {
-    int n;
-    cin >> n;
-    
+    int n=5;
     for(int i=0;i<n;i++){
         for(int j=0;j<26;j++){
-            if(i == j%8 || i+j%8 == 2*n-2) cout << (char)(65+j);
+            if(i == j%8 || i+j%8 == 8) cout << (char)(65+j);
             else cout << ' ';
         }
     

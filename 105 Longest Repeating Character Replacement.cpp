@@ -27,3 +27,54 @@ public:
 
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+// Practiced
+#include <iostream>
+using namespace std;
+
+
+int main(){
+
+    int k;
+    string s;
+    cin >> k;
+    cin>> s;
+
+    int hash[26] = {0};
+    int maxLen = 0;
+    int maxFreq = 0;
+
+    int l = 0, r = 0;
+    
+    while(r < s.size()){
+        hash[s[r] - 'a']++;
+        if(hash[s[r] - 'a'] > maxFreq) maxFreq = hash[s[r] - 'a'];
+
+        int window_size = r - l + 1;
+
+        if(window_size - maxFreq > k){
+            hash[s[l++] - 'a']--;
+            //update maxFreq
+            for(int i=0;i<26;i++) if(hash[i] > maxFreq) maxFreq = hash[i];
+        }
+
+        if(window_size - maxFreq <= k){
+            if(window_size > maxLen) maxLen = window_size;
+        }
+        r++;
+    }
+    cout << maxLen;
+
+
+    return 0;
+}

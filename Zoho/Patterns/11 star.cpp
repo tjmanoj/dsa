@@ -15,3 +15,14 @@ int main()
     }
     return 0;
 }
+
+/*
+n = 7
+   X   
+  X X  
+ X   X 
+X     X
+ X   X 
+  X X  
+   X   
+*/

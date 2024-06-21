@@ -1,3 +1,6 @@
+//TC  : O(n)
+  SC  : O(1)
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -19,5 +22,27 @@ int main() {
   return 0;
 }
 
-//TC  : O(n)
-  SC  : O(1)
+
+// Two pointer
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    int a[n];
+    for(int i=0;i<n;i++) cin >> a[i];
+
+    int l = 0, r = 0;
+    int maxLen = 0;
+
+    while(r < n){
+        if(a[r] == 1) maxLen = max(r - l + 1,maxLen);
+
+        else l = r+1;
+
+        r++;
+
+    }
+    cout << maxLen;
+}

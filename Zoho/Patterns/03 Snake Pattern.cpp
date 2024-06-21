@@ -4,15 +4,15 @@ using namespace std;
 int main(){
     int n;
     cin >> n;
-    int sum = 1;
+    int sum = 0;
     for(int i=0;i<n;i++){
-        if(i&1){                                              // odd rows => continue from sum + n - 1 decrementing
-            int temp = sum + n - 1;
+        if(i&1){                                              // odd rows => continue from sum + n decrementing
+            int temp = sum + n;
             sum += n;
             for(int j=0;j<n;j++) cout << temp-- << ' ';
         }
         else {                                                //even rows => continue from sum variable incrementing
-            for(int j=0;j<n;j++) cout << sum++ << ' ';
+            for(int j=0;j<n;j++) cout << ++sum << ' ';
         }
         cout << endl;
     }

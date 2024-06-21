@@ -29,7 +29,7 @@ public :
         vector<int> visited(n,0);
         for(int i=0;i<n;i++){                                   //O(n)
             if(!visited[i]){
-                if(bfs(i,adj,visited)) return true;             //O(n + 2e) for each bjs
+                if(bfs(i,adj,visited)) return true;             //O(n + 2e) for each bjs     n for push,pop  and 2e for checking neighbours nodes
             }                                            
                                                                 //bjs function will return true if cycle exits, if bjs true then return true
         }

@@ -72,3 +72,10 @@ int main() {
     printLL(c);
     return 0;
 }
+
+
+// 3 2
+// 6 8 9
+// 8 3
+
+// OP : 4 2 0 1
