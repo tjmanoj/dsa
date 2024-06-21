@@ -73,8 +73,8 @@ class map{
         }
 
         VAL& operator[] (const KEY &k){
-            Node* node = find(root,k);
-            if(node == nullptr) insert(k, VAL());
+            Node* node = find(root,k);                
+            if(node == nullptr) insert(k, VAL());		// important line
             node = find(root,k);
             return node->val;
         }
