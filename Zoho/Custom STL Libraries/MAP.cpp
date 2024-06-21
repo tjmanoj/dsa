@@ -85,9 +85,9 @@ class map{
             return &(node->val);
         }
 
-		int size() const{
-			return size(root);
-		}
+	int size() const{
+		return size(root);
+	}
 };
 
 int main(){
