@@ -17,7 +17,7 @@ class Solution{
             
             if(v[mid] <= x){
                 ans = mid;
-                low = mid + 1;
+                low = mid + 1;                           // We need greatest index so move to right part.
             }
             else high = mid -1;
         }
