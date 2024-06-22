@@ -17,11 +17,12 @@ public:
             if(nums[low] == nums[mid] && nums[mid] == nums[high]){
                 low++;
                 high--;
+                continue;                                                 // repeat trimming until we can find the sorted array
             }
 
 
             // if left part is sorted
-            else if(nums[low] <= nums[mid]){                             
+            if(nums[low] <= nums[mid]){                             
                 if(target >= nums[low] && target <= nums[mid]){
                     high = mid - 1;                                // if element exits in this range
                 }
