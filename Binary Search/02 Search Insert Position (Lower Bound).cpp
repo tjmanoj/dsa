@@ -14,7 +14,7 @@ public:
             int mid = low + (high-low) /2;
             if(nums[mid] >= target){
                 ans = mid;
-                high = mid - 1;
+                high = mid - 1;                     //We need smallest index so last la irunthu shirnk pandrom
             }
             else low = mid + 1;
         }
