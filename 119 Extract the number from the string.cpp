@@ -7,7 +7,7 @@ class Solution {
 
         int n = sentence.size();
         bool flag = false;
-        long long max = -1;
+        long long maxi = -1;
         long long temp = 0;
         
         for(int i=0;i<sentence.size();i++){
@@ -23,17 +23,17 @@ class Solution {
             
             else if(!flag){
                 
-                if(sentence[i] >= 48 && sentence[i] <= 57){
+                if(sentence[i] >= '0' && sentence[i] <= '9'){
                     temp = (temp * 10) + (sentence[i] - '0');
                 }
                 
                 else if(sentence[i] == ' '){
-                    if(temp > max && temp !=0) max = temp;
+                    maxi = max(maxi,temp);
                     temp =0;
                 }
             }
         }
-        if(sentence[n-1] >= 48 && sentence[n-1] <= 57) if(temp > max && temp !=0) max = temp;
-        return max;
+        if(sentence[n-1] >= '0' && sentence[n-1] <= '9') maxi = max(maxi,temp);
+        return maxi;
     }
 };
