@@ -6,10 +6,7 @@ class Solution{
     // Function to find floor of x
     // n: size of vector
     // x: element whose floor is to find
-    int findFloor(vector<long long> v, long long n, long long x){
-        
-        // here we need to find <= which is floor of the given value  (Upper Bound)
-        
+    int findFloor(vector<long long> v, long long n, long long x){       
         long long low = 0;
         long long high = n-1;
         
