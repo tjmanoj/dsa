@@ -6,7 +6,7 @@ class Solution{
     long long int floorSqrt(long long int x) 
     {
         int ans = 1;
-        long long low = 1,high = x;
+        long long low = 1,high = x/2;
         
         while(low <= high){
             long long mid = low + (high - low)/2;
