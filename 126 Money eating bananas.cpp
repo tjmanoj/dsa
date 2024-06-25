@@ -27,3 +27,11 @@ public:
         return ans;
     }
 };
+
+
+
+// A monkey is given 'n' piles of bananas, where the 'ith' pile has 'a[i]' bananas. An integer 'h' is also given, which denotes the time(in hours) in which all bananas should be eaten.
+
+// The monkey chooses a non-empty pile each hour and consumes 'm' bananas. If a pile has fewer than 'm' bananas, the monkey eats all the bananas in that hour and won't eat any more in that hour.
+
+// Determine the minimum 'm' to ensure the monkey can finish all the bananas within 'h' hours.
