@@ -1,4 +1,4 @@
-// TC : O(N logn)
+// TC : O(log(max(arr))*n)
 // SC : O(1)
 
 class Solution {
