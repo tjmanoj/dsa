@@ -4,7 +4,7 @@
 
 class Solution{
 	public:
-	long long power(int mid, int n,int m){
+	long long func(int mid, int n,int m){
 	    long long ans = 1;
 	    for(int i=0;i<n;i++){
 	        ans *= mid;
@@ -21,8 +21,8 @@ class Solution{
 	    while(low <= high){
 	        long long mid = low + (high - low) /2;
 	        
-	        if(power(mid,n,m) == 1) return mid;
-	        else if(power(mid,n,m) == 2) high = mid - 1;                        // 2 means the elements exeeded so move to left
+	        if(func(mid,n,m) == 1) return mid;
+	        else if(func(mid,n,m) == 2) high = mid - 1;                        // 2 means the elements exeeded so move to left
 	        else low = mid + 1;
 	    }
 	    return -1;
