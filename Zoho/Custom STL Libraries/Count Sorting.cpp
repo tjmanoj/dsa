@@ -30,5 +30,6 @@ int main(){
     for(int i=n-1; i>=0; i--) ans[--temp[a[i] - min]] = a[i];
 
     delete [] temp;
-    return ans;
+
+    for(auto i: a) cout << i << ' ' << ;
 }
