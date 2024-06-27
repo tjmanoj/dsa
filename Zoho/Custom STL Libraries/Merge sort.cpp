@@ -1,3 +1,6 @@
+// O( n logn )
+// O(N)
+
 void merge(int a[],int low,int mid,int high){
     int temp[high - low + 1];
     int i = low;
