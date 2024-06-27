@@ -23,13 +23,16 @@ int main(){
     
     for(auto k: a) temp[k - min]++;          // O(N)
     
-    for(int i=1;i<range;i++) temp[i] += temp[i-1];     // O(N)
-    
-    
+    for(int i=1;i<range;i++) temp[i] += temp[i-1];     // O(N)   
     
     for(int i=n-1; i>=0; i--) ans[--temp[a[i] - min]] = a[i];
 
-    delete [] temp;
-
     for(auto i: a) cout << i << ' ' << ;
+    
+    delete [] temp;
+    delete [] ans;
 }
+
+
+// For descending order sorting simply subtract (n-1) while storing it to ans
+for(int i=n-1; i>=0; i--)  ans[(n-1) - (--temp[a[i] - min])] = a[i];
