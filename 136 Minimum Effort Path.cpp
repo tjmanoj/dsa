@@ -1,4 +1,4 @@
-// TC : O(N*M)
+// TC : O(N*M  * log (MN))            log(MN) is for priority queue top()
 // SC : O(M*N)
 #include <bits/stdc++.h>
 using namespace std;
