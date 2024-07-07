@@ -3,26 +3,25 @@
 
 class Solution {
   public:
-    // Function should return all the ancestor of the target node
-    void preorder(Node* root, vector<int> &ans,int target, vector<int> &ansesters){
+    void preorder(Node* root, vector<int> temp,int target, vector<int> &ans){
         if(root == nullptr) return;
         
         if(root->data == target) {
-            ansesters = ans;
+            ans = temp;
             return;
         }
         
-        ans.push_back(root->data);
-        preorder(root->left,ans,target,ansesters);
-        preorder(root->right,ans,target,ansesters);
-        ans.pop_back();
-        
+        temp.push_back(root->data);
+        preorder(root->left,temp,target,ans);
+        preorder(root->right,temp,target,ans);
+        temp.pop_back();
     }
     
     vector<int> Ancestors(struct Node *root, int target) {
-        vector<int> ans,ansesters;
-        preorder(root,ans,target,ansesters);
-        reverse(ansesters.begin(),ansesters.end());
-        return ansesters;
+        vector<int> ans;
+        preorder(root,{},target,ans);
+        
+        reverse(ans.begin(),ans.end());
+        return ans;
     }
 };
