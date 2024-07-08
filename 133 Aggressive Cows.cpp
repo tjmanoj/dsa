@@ -16,8 +16,8 @@ bool func(vector<int> &stalls, int dist, int k){
 int aggressiveCows(vector<int> &stalls, int k)
 {
     sort(stalls.begin(),stalls.end());
-    int low = 0;
-    int high = stalls[stalls.size() - 1];
+    int low = 1;
+    int high = stalls[stalls.size() - 1] - stalls[0];
     int ans = 0;
     while(low <= high){                          // O(N * log (arr[n-1] - arr[0]))
         int mid = low + (high - low)/2;
