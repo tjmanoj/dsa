@@ -29,3 +29,36 @@ int main(){
         cout << (isPalindrome(s) ? "YES\n" : "No\n");
     }
 }
+
+
+
+
+// Method 2:
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    string s;
+    cin >> t ; ;
+    bool flag = true;
+    while(t--){
+        cin >> s;
+        int hash[26] = {0};
+        for(int i=0;i<s.size();i++){
+            hash[s[i] - 'a']++;
+        }
+        int len = 0;
+        bool flag = false;
+        for(int i=0;i<26;i++){
+            if(hash[i] %2 == 0) len += hash[i];
+            else{
+                len += hash[i]-1;
+                flag = true;
+            }
+        }
+        if(flag) len++;
+        if(len == s.size()) cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
+}
