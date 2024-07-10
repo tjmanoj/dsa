@@ -1,3 +1,5 @@
+// TC : O(2^N)
+// SC : O(1)
 class Solution {
   public:
     void helper(string s,vector<string>& res,int ind,string cur){
