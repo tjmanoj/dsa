@@ -8,5 +8,5 @@ int main()
     else cout << year << "is not a leap year";
 }
 
-// exactly divisible by 4 then it should not be a century year or
-// it may be a century year and may or may not divisible by 4
+// century year ah iruntha 400 aala divide aaguthanu paakanum.
+// century year ah ilana 4 aala divide aaguthanu pakaanum.
