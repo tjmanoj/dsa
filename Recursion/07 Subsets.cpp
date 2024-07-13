@@ -22,3 +22,26 @@ class Solution {
         return res;
     }
 };
+
+
+// Leetcode (Alternative Method - first exclude the element and then include)
+class Solution {
+public:
+    void helper(vector<int>&nums,vector<vector<int>>&res, vector<int> cur,int ind){
+        if(ind == nums.size()){
+            res.push_back(cur);
+            return;
+        }
+
+        helper(nums,res,cur,ind+1);     // Exclude
+
+        cur.push_back(nums[ind]);
+        helper(nums,res,cur,ind+1);
+    }
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> res;
+
+        helper(nums,res,{},0);
+        return res;
+    }
+};
