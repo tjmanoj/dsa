@@ -22,3 +22,22 @@ public:
         return maxLen;
     }
 };
+
+
+
+//Using hashing
+class Solution {
+public:
+    int findLHS(vector<int>& nums) {
+        unordered_map<int,int> m;
+        int maxLen = 0;
+        for(auto i: nums) m[i]++;
+
+        for(auto i: m){
+            if(m.find(i.first - 1) != m.end()){
+                maxLen = max(maxLen,i.second + m[i.first - 1]);
+            }
+        }
+        return maxLen;
+    }
+};
