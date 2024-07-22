@@ -7,7 +7,7 @@ public:
         int n = matrix.size();
 
         for(int i=0;i<n;i++){
-            for(int j=i;j<n;j++){                            // ithu square matrix naala j = i la start pandrom.
+            for(int j=i+1;j<n;j++){                          // inplace la update pandra naala j = i+1 la irunthu edutha pothum.
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[j][i];
                 matrix[j][i] = temp;
