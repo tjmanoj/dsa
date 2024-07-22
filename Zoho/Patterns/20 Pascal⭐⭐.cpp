@@ -30,3 +30,33 @@ int main(){
 //   1 2 1  
 //  1 3 3 1 
 // 1 4 6 4 1
+
+
+
+
+
+
+// Using 11^2 method, it will not print space between them
+#include <iostream>
+using namespace std;
+
+int pow(int n,int m){
+    int tot = 1;
+    for(int i=0;i<m;i++) tot *= n;
+    return tot;
+}
+int main(){
+    int n;
+    cin >> n;
+    
+    for(int i=0;i<n;i++){
+        //space
+        for(int j=0;j<n-i;j++) cout << ' ';
+         cout << pow(11,i) << endl;
+    }
+}
+
+ //    1
+ //   11
+ //  121
+ // 1331
