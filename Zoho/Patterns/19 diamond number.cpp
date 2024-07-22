@@ -1,3 +1,5 @@
+// Important Note is start from index 1
+
 #include <iostream>
 using namespace std;
 
@@ -23,8 +25,8 @@ int main(){
             //space
             for(int k=0;k<i-n-1;k++) cout << ' ';
 
-            //pattern
-            for(int k=0;k<n-i%(n+1);k++) cout << sum-- << ' ';
+            //pattern                                                                           i  n+1  
+            for(int k=0;k<n-i%(n+1);k++) cout << sum-- << ' ';             // n - i%(n+1)   4 - 5 % 5 => 4 - 0 = 4 times
         }
         cout <<endl;
     }
