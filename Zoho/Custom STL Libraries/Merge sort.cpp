@@ -3,8 +3,8 @@
 
 void merge(int a[],int low,int mid,int high){
     int temp[high - low + 1];
-    int i = low;
-    int j = mid+1;
+    int i = low;                                                    // i = low 
+    int j = mid+1;                                                  // j = mid+1
     int k=0;
 
     while(i <= mid && j <= high){
