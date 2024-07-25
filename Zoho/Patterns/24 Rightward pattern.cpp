@@ -1,3 +1,44 @@
+// O(1)
+
+#include <iostream>
+using namespace std;
+
+void pattern(int i){
+    if(i&1){
+        for(int j=0;j<i;j++) 
+            if(j%2==0) cout << '*';
+                else cout << ' ';
+        
+        cout << endl;
+    }
+    else{
+        for(int j=0;j<i;j++) 
+            if(j%2 == 0) cout << ' ';
+                else cout << '*';
+        
+        cout << endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    
+    for(int i=1;i<n;i++){
+        pattern(i);
+    }
+    
+    for(int i=n;i>0;i--){
+        pattern(i);
+    }
+}
+
+
+
+
+O(N^2) space and time
+
 #include <iostream>
 #include<cstring>
 using namespace std;
