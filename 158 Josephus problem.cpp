@@ -6,6 +6,6 @@ class Solution
     int josephus(int n, int k)
     {
         if(n == 1) return 1;                   //actual ah 0 than return panannum, since in qsn it is 1 based index we are adding 1 to it
-        return (josephus(n-1,k)+k-1) % n + 1;  // actual ah func(n-1,k)+k  % n  than answer (0 biased ku)
+        return (josephus(n-1,k)+ (k-1) ) % (n + 1);  // actual ah func(n-1,k)+k  % n  than answer (0 biased ku)  // for 1 based naala -1 + 1 add panirken
     }
 };
