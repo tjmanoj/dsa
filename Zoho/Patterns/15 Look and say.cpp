@@ -1,3 +1,45 @@
+// java code
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      int n = 5;
+      
+      String term = "1";
+      System.out.println(term);
+      for(int i=0; i<n; i++)
+      {
+        term = nextTerm(term);
+        System.out.println(term);
+      }
+      
+    }
+    
+    public static String nextTerm(String term)
+    {
+      int count =1;
+      int len = term.length();
+      String res = "";
+      
+      for(int i=1;i<=len;i++)
+      {
+        if(i < len && term.charAt(i) == term.charAt(i-1))
+        {
+          count++;
+        }
+        
+        else 
+        {
+          res = res + count;
+          res += term.charAt(i-1);
+          count = 1;
+        }
+      }
+      
+      return res;
+    }
+}
+
 #include <iostream>
 using namespace std;
 string next_term(string &s){
