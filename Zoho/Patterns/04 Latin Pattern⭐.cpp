@@ -1,3 +1,27 @@
+// java code
+public static void main(String[] args) {
+      int n = 5;
+      
+      for(int i=65; i<n+65; i++)
+      {
+        int range = n+65-i;
+        for(int j=0; j < range; j++)
+        {
+          char ch = (char) (i+j);
+          System.out.print(ch);
+        }
+        
+        for(int j=65; j < i; j++)
+        {
+          char ch = (char) (j);
+          System.out.print(ch);
+        }
+        
+        System.out.println();
+      }
+  }
+
+
 #include <iostream>
 using namespace std;
 
